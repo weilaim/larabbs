@@ -30,7 +30,7 @@
           </ul>
         </div>
 
-        <div class="card-body">
+        <div class="card-body ">
           {{-- 话题列表 --}}
           @include('topics._topic_list', ['topics' => $topics])
           {{-- 分页 --}}

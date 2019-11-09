@@ -1,5 +1,5 @@
 @if (count($topics))
-    <ul class="media-list">
+    <ul class="col-sm-12 col-md-12  bg-red ">
         @foreach ($topics as $topic)
             <li class="media">
                 <div class="media-left">
