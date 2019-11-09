@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="container">
-  <div class="col-md-10 offset-md-1">
+<div class="row">
+  <div class="col-md-10 ">
     <div class="card ">
       <div class="card-header">
         <h1>Topic / Show #{{ $topic->id }}</h1>
