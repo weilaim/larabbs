@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <div class="col-lg-3 col-md-3 sidebar">
+    <div class="col-lg-3 col-md-3 sidebar pd-l" >
       @include('topics._sidebar')
     </div>
   </div>
