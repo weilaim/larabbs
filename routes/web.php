@@ -26,7 +26,9 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 //个人页面
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
-Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
+//友好seo  url
+Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
 
 //根据分类列表话题
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
