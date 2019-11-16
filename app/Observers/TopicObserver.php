@@ -29,6 +29,11 @@ class TopicObserver
         }
 
     }
+
+    //话题删除连带回复也会删除
+    public function deleted(Topic $topic){
+        \DB::table('replies')->where('topic_id',$topic->id)->delete();
+    }
     public function creating(Topic $topic)
     {
         //
