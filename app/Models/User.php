@@ -15,19 +15,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
         notify as protected laravelNotify;
     }
 
-    public function notify($instance){
-        //如果通知的是当前用户，就不必通知了
-        if($this->id == Auth::id()){
-            return;
-        }
 
-        //只有数据库类型通知才需提醒，直接发送Email 或者其他的都pass
-        if(method_exists($instance,'toDatabases')){
-            $this->increment('notification_count');
-        }
-
-        $this->laravelNotify($instance);
-    }
 
     protected $fillable = [
         'name', 'email', 'password','introduction','avatar',
@@ -57,5 +45,29 @@ class User extends Authenticatable implements MustVerifyEmailContract
     public function replies()
     {
         return $this->hasMany(Reply::class);
+    }
+
+    public function notify($instance)
+    {
+        // 如果要通知的人是当前用户，就不必通知了！
+        if ($this->id == Auth::id()) {
+            return;
+        }
+
+        // 只有数据库类型通知才需提醒，直接发送 Email 或者其他的都 Pass
+        if (method_exists($instance, 'toDatabase')) {
+            $this->increment('notification_count');
+        }
+
+        $this->laravelNotify($instance);
+    }
+
+    //去除 清除未读消息标示
+
+    public function markAsRead()
+    {
+        $this->notification_count = 0;
+        $this->save();
+        $this->unreadNotifications->markAsRead();
     }
 }
