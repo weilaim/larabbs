@@ -39,10 +39,16 @@
                             <a class="nav-link bg-transparent {{ active_class(if_query('tab', 'replies')) }}" href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}">
                                 Ta 的回复
                             </a>
+                        </li><li class="nav-item">
+                            <a class="nav-link bg-transparent {{ active_class(if_query('tab', 'repliesc')) }}" href="{{ route('users.show', [$user->id, 'tab' => 'repliesc']) }}">
+                                Ta sss
+                            </a>
                         </li>
                     </ul>
                     @if (if_query('tab', 'replies'))
                         @include('users._replies', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])
+                    @elseif (if_query('tab','repliesc'))
+                        @include('users._repliesc',['replies'=>$user->replies()->with('topic')->recent()->paginate(5)])
                     @else
                         @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)])
                     @endif
