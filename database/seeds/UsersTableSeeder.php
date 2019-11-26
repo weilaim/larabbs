@@ -38,10 +38,11 @@ class UsersTableSeeder extends Seeder
         User::insert($user_array);
 
         // 单独处理第一个用户的数据
+
         $user = User::find(1);
         $user->name = 'Weilaim';
         $user->email = '879181054@qq.com';
-        $user->avatar = url().'uploads/images/avatars/ZdZQpDxQhYyC7r6hHBrDTx509YA7Hkqs.jpg';
+        $user->avatar = 'www.weilaim.top/uploads/images/avatars/ZdZQpDxQhYyC7r6hHBrDTx509YA7Hkqs.jpg';
         $user->save();
 
 
