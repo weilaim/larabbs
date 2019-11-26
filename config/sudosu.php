@@ -30,7 +30,7 @@ return [
     'user_model' => App\User::class,
 
     // 允许使用的顶级域名
-    'allowed_tlds' => ['dev', 'local', 'test','com'],
+    'allowed_tlds' => ['dev', 'local', 'test','com','top'],
 
     // 用户模型
     'user_model' => App\Models\User::class
