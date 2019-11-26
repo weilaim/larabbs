@@ -14,7 +14,7 @@ class UserObserver
     {
         // 这样写扩展性更高，只有空的时候才指定默认头像
         if (empty($user->avatar)) {
-            $user->avatar = 'https://cdn.learnku.com/uploads/avatars/47004_1565510685.jpeg!/both/100x100';
+            $user->avatar = 'http://weilaim.top/uploads/images/avatars/XvaDPvZm6BveZrtms9KuyT8d8g65rnuN.jpg';
         }
     }
     public function creating(User $user)
