@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
         $user = User::find(1);
         $user->name = 'Weilaim';
         $user->email = '879181054@qq.com';
-        $user->avatar = 'uploads/images/avatars/XvaDPvZm6BveZrtms9KuyT8d8g65rnuN.jpg';
+        $user->avatar = '/XvaDPvZm6BveZrtms9KuyT8d8g65rnuN.jpg';
         $user->save();
 
 
